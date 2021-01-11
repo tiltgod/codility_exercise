@@ -29,7 +29,12 @@ class FinderPolicy(object):
         return agents
 
     def find(self, ticket: Ticket, agents: List[Agent]) -> Agent:
-        raise NotImplemented
+        skill_list = []
+        load_list = []
+        for i in agents:
+            skill_list.append(agents[i].skills)
+            load_list.append(agents[i].load)
+        
 
 class LeastLoadedAgent(FinderPolicy):
     def find(self, ticket: Ticket, agents: List[Agent]) -> Agent:
