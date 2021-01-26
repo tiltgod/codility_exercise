@@ -4,4 +4,3 @@ def solution(A):
         for i in A:
             ans ^= i
         return ans
-        
